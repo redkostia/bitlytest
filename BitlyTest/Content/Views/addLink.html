@@ -1,23 +1,22 @@
 ﻿<div class="row top-padding">
 	<div class="col-sm-12">
 		<h3>Введите ссылку</h3>
-		<form id="addDeviceForm" name="addDeviceForm">
+		<form id="vm.addDeviceForm" name="vm.addDeviceForm">
 			<div class="row">
 				<div class="form-group col-sm-10">
-					<input maxlength="256" type="text" ng-model="originalUrl" style="width: 100%;" required />
+					<input maxlength="256" type="text" ng-model="vm.originalUrl" style="width: 100%;" required />
 				</div>
-				<!--<div class="form-group col-sm-12"><input class="k-textbox" type="text" ng-model="device.Ip" placeholder="IP" ng-show="device.Type != 1" ng-required="device.Type != 1"/></div>-->
 				<div class="col-sm-2">
-					<img src="/Content/Images/Loading_icon.gif" ng-show="isLoading" /><a href="javascript:void(0)" class="k-button k-button-icontext" ng-click="saveDevice()" ng-show="!isLoading"><span class="k-icon k-add"></span>Сжать</a>
+					<img src="/Content/Images/Loading_icon.gif" ng-show="vm.isLoading" /><a href="javascript:void(0)" ng-click="vm.saveDevice()" ng-show="!vm.isLoading">Сжать</a>
 				</div>
 			</div>
 			<div class="row">
-				<div class="form-group col-sm-12 error" ng-show="isFormInValid()">Введите ссылку</div>
-				<div class="form-group col-sm-12 error">{{status}}</div>
+				<div class="form-group col-sm-12 error" ng-show="vm.isFormInValid()">Введите ссылку</div>
+				<div class="form-group col-sm-12 error">{{vm.status}}</div>
 			</div>
 		</form>
 	</div>
-	<div class="col-sm-12" ng-show="originalSavedUrl">
-		Сжатая ссылка для <b>{{originalSavedUrl}}</b> : <a target="_blank" href="{{shortUrl}}">{{shortUrl}}</a>
+	<div class="col-sm-12" ng-show="vm.originalSavedUrl">
+		Сжатая ссылка для <b>{{vm.originalSavedUrl}}</b> : <a target="_blank" href="{{vm.shortUrl}}">{{vm.shortUrl}}</a>
 	</div>
 </div>

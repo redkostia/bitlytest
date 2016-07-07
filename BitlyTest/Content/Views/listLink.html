@@ -8,12 +8,12 @@
 			<th>Дата создания</th>
 		</tr>
 		</thead>
-		<tr ng-repeat="r in links">
+		<tr ng-repeat="r in vm.links">
 			<td width="40%">
 				<a href="{{r.OriginalUrl}}" target="_blank">{{r.OriginalUrl}}</a>
 			</td>
 			<td width="40%">
-				<a href="{{getUrl(r.ShortUrl)}}" target="_blank">{{getUrl(r.ShortUrl)}}</a>
+				<a href="{{vm.getUrl(r.ShortUrl)}}" target="_blank">{{vm.getUrl(r.ShortUrl)}}</a>
 			</td>
 			<td width="10%">
 				{{r.VisitCount}}
@@ -24,6 +24,6 @@
 		</tr>
 	</table>
 
-	<div class="form-group col-sm-12 error">{{scope.status}}</div>
+	<div class="form-group col-sm-12 error">{{vm.status}}</div>
 </div>
 

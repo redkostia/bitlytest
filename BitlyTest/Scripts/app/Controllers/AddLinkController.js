@@ -1,46 +1,36 @@
-﻿BitlyApp.controller('AddLinkController', ['$scope', '$location', 'ValuesService', function (scope, l, ValuesService) {
-	console.log('add link');
+﻿BitlyApp.controller('AddLinkController', ['ValuesService', function (ValuesService) {
+	var vm = this;
 	//
-	scope.message = "Add link controller executes";
-	scope.isLoading = false;
-	scope.originalUrl = '';
-	scope.originalSavedUrl = '';
-	scope.shortUrl = '';
-	scope.status = '';
-	scope.localUrl = window.location.origin;
-	scope.isFormInValid = function () {
-		return scope.addDeviceForm.$invalid && scope.addDeviceForm.$dirty;
+	vm.message = "Add link controller executes";
+	vm.isLoading = false;
+	vm.originalUrl = '';
+	vm.originalSavedUrl = '';
+	vm.shortUrl = '';
+	vm.status = '';
+	vm.localUrl = window.location.origin;
+	vm.isFormInValid = function () {
+		return vm.addDeviceForm.$invalid && vm.addDeviceForm.$dirty;
 	};
 
-	scope.saveDevice = function () {
-		if (scope.addDeviceForm.$invalid) {
-			scope.addDeviceForm.$dirty = true;
+	vm.saveDevice = function() {
+		if (vm.addDeviceForm.$invalid) {
+			vm.addDeviceForm.$dirty = true;
 			return;
 		}
-			
-		scope.isLoading = true;
-		scope.status = '';
-		ValuesService.shrinkUrl(scope.originalUrl)
-				.success(function (data) {
-					scope.originalSavedUrl = scope.originalUrl;
-					scope.shortUrl = scope.localUrl + '/' + data;
-					scope.isLoading = false;
-					console.log(data);
-				})
-				.error(function (error) {
-					scope.status = 'Ошибка при сохранении: ' + error.ExceptionMessage;
-					scope.isLoading = false;
-					console.log(scope.status);
-				});
-		//DeviceService.saveDevice(scope.device, function (err, data) {
-		//	helpers.preloader.hide();
-		//	if (err) {
-		//		console.log("Device controller", err);
-		//		return;
-		//	}
-		//	scope.getDevices();
-		//	scope.device = {};
-		//});
-		
+
+		vm.isLoading = true;
+		vm.status = '';
+		ValuesService.shrinkUrl(vm.originalUrl)
+			.success(function(data) {
+				vm.originalSavedUrl = vm.originalUrl;
+				vm.shortUrl = vm.localUrl + '/' + data;
+				vm.isLoading = false;
+				console.log(data);
+			})
+			.error(function(error) {
+				vm.status = 'Ошибка при сохранении: ' + error.ExceptionMessage;
+				vm.isLoading = false;
+				console.log(vm.status);
+			});
 	};
 }]);
