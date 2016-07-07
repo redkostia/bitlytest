@@ -14,16 +14,18 @@ namespace BitlyTest.Bll.ViewModels
 		[DataMember]
 		public string OriginalUrl { get; set; }
 		[DataMember]
-		public string ShrinkUrl { get; set; }
+		public string ShortUrl { get; set; }
 		[DataMember]
 		public DateTime Created { get; set; }
 		[DataMember]
 		public int VisitCount { get; set; }
+		[DataMember]
+		public string DateFormatted { get { return Created.ToString("f"); } }
 
 		public LinkViewModel(Link link)
 		{
 			this.OriginalUrl = link.OriginalUrl;
-			this.ShrinkUrl = link.ShortUrl;
+			this.ShortUrl = link.ShortUrl;
 			this.Created = link.Created;
 			this.VisitCount = link.VisitLogs != null ?  link.VisitLogs.Count : 0;
 		}

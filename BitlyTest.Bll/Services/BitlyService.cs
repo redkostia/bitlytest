@@ -36,9 +36,9 @@ namespace BitlyTest.Bll.Services
 		    return link.ShortUrl;
 	    }
 
-	    public IEnumerable<LinkViewModel> GetLinks(int pageSize, int pageNo)
+	    public IEnumerable<LinkViewModel> GetLinks()
 	    {
-			return _linkRepository.Get(pageSize: pageSize, pageNo: pageNo).ToList().Select(c=> new LinkViewModel(c));
+			return _linkRepository.Get().ToList().Select(c=> new LinkViewModel(c));
 	    }
 
 	    public string LogVisit(string shortUrl)

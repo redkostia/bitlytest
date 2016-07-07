@@ -18,18 +18,27 @@ namespace BitlyTest.Controllers
 			_bitlyService = bitlyService;
 		}
 		// GET api/values
-		public IEnumerable<LinkViewModel> Get(int pageSize = 10, int pageNo = 0)
+		public IEnumerable<LinkViewModel> Get()
 		{
-			return _bitlyService.GetLinks(pageSize: 10, pageNo: 0);
+			return _bitlyService.GetLinks();
 		}
 
-	
-
-		// POST api/values
+		[HttpPost]
 		public string Post([FromBody]string originalUrl)
 		{
 			return _bitlyService.Add(originalUrl);
 		}
 
+		//// POST api/values
+		//[HttpPost]
+		//public string Post([FromBody]PostData data)
+		//{
+		//	return _bitlyService.Add(data.OriginalUrl);
+		//}
+
+		public class PostData
+		{
+			public string OriginalUrl { get; set; }
+		}
 	}
 }

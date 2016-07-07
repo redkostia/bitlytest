@@ -10,7 +10,7 @@ namespace BitlyTest.Data.Repositories
 	public interface ILinkRepository
 	{
 		Link Save(Link link);
-		IQueryable<Link> Get(int pageSize, int pageNo);
+		IQueryable<Link> Get();
 		Link GetLinkByShortUrl(string shrinkUrl);
 		Link GetLinkByOriginalUrl(string originalUrl);
 

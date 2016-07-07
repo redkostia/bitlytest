@@ -1,0 +1,29 @@
+﻿<div class="row list-padding">
+	<table class="table">
+		<thead>
+		<tr>
+			<th>Оригинальная ссылка</th>
+			<th>Сжатая ссылка</th>
+			<th>Переходы</th>
+			<th>Дата создания</th>
+		</tr>
+		</thead>
+		<tr ng-repeat="r in links">
+			<td width="40%">
+				<a href="{{r.OriginalUrl}}" target="_blank">{{r.OriginalUrl}}</a>
+			</td>
+			<td width="40%">
+				<a href="{{getUrl(r.ShortUrl)}}" target="_blank">{{getUrl(r.ShortUrl)}}</a>
+			</td>
+			<td width="10%">
+				{{r.VisitCount}}
+			</td>
+			<td width="10%">
+				{{r.DateFormatted}}
+			</td>
+		</tr>
+	</table>
+
+	<div class="form-group col-sm-12 error">{{scope.status}}</div>
+</div>
+

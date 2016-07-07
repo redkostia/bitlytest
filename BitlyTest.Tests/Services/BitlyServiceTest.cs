@@ -112,7 +112,7 @@ namespace BitlyTest.Tests.Services
 			mockLog.As<IQueryable<VisitLog>>().Setup(m => m.ElementType).Returns(logs.ElementType);
 			mockLog.As<IQueryable<VisitLog>>().Setup(m => m.GetEnumerator()).Returns(() => logs.GetEnumerator());
 
-			var result = service.GetLinks(pageSize:10,pageNo: 0).ToList();
+			var result = service.GetLinks().ToList();
 
 			Assert.AreEqual(2, result.Count);
 

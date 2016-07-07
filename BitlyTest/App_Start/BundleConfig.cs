@@ -23,6 +23,12 @@ namespace BitlyTest
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 					  "~/Content/bootstrap.css",
 					  "~/Content/site.css"));
+
+			bundles.Add(new ScriptBundle("~/bundles/appjs").Include(
+					  "~/Scripts/app/app.js",
+					  "~/Scripts/app/Services/ValuesService.js",
+					  "~/Scripts/app/Controllers/AddLinkController.js",
+					  "~/Scripts/app/Controllers/ListLinkController.js"));
 		}
 	}
 }

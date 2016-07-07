@@ -21,9 +21,9 @@ namespace BitlyTest.Data.Repositories
 			return link;
 		}
 
-		public IQueryable<Link> Get(int pageSize, int pageNo)
+		public IQueryable<Link> Get()
 		{
-			return _dbContext.Links.OrderBy(c=> c.Id).Skip(pageSize*pageNo).Take(pageSize);
+			return _dbContext.Links.OrderByDescending(c => c.Created);
 		}
 
 		public Link GetLinkByShortUrl(string shrinkUrl)
