@@ -171,6 +171,7 @@
     <Content Include="Scripts\app\Controllers\ListLinkController.js" />
     <Content Include="Content\Views\addLink.html" />
     <Content Include="Content\Views\listLink.html" />
+    <Content Include="Scripts\app\Controllers\MenuController.js" />
     <Content Include="Scripts\app\Services\ValuesService.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

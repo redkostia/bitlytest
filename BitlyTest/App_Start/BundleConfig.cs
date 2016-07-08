@@ -28,7 +28,8 @@ namespace BitlyTest
 					  "~/Scripts/app/app.js",
 					  "~/Scripts/app/Services/ValuesService.js",
 					  "~/Scripts/app/Controllers/AddLinkController.js",
-					  "~/Scripts/app/Controllers/ListLinkController.js"));
+					  "~/Scripts/app/Controllers/ListLinkController.js",
+					  "~/Scripts/app/Controllers/MenuController.js"));
 		}
 	}
 }
